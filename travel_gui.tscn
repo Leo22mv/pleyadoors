@@ -1,0 +1,491 @@
+[gd_scene load_steps=45 format=3 uid="uid://dsbvi80c4bc3u"]
+
+[ext_resource type="Script" path="res://TravelGui.gd" id="1_a6age"]
+[ext_resource type="Texture2D" uid="uid://cdja7me4kv30v" path="res://Assets/Planets/Space Background (1).png" id="2_8lrae"]
+[ext_resource type="Texture2D" uid="uid://dgdedlcq3qk8p" path="res://Assets/Planets/159753.png" id="3_xowou"]
+[ext_resource type="Texture2D" uid="uid://cplkyfpi5c55b" path="res://Assets/Backgrounds/RedGlassPanel.png" id="4_4gb8x"]
+[ext_resource type="FontFile" uid="uid://b3qjvntr1xwwd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future.ttf" id="5_06ptw"]
+[ext_resource type="Texture2D" uid="uid://dqhon4rywoc08" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item009.png" id="6_0jxgm"]
+[ext_resource type="FontFile" uid="uid://5jo2d5kfwtvd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future_thin.ttf" id="7_equue"]
+[ext_resource type="Texture2D" uid="uid://c6twlfd7wnd0x" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a1.png" id="8_23msf"]
+[ext_resource type="Texture2D" uid="uid://jdoaokwawtnm" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a2.png" id="9_4a5no"]
+[ext_resource type="Texture2D" uid="uid://yvodeqd7m5m" path="res://Assets/Planets/258456.png" id="10_gr6yo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkl3a"]
+atlas = ExtResource("3_xowou")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fgfv"]
+atlas = ExtResource("3_xowou")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef1uj"]
+atlas = ExtResource("3_xowou")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciwu4"]
+atlas = ExtResource("3_xowou")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foiex"]
+atlas = ExtResource("3_xowou")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6adf"]
+atlas = ExtResource("3_xowou")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dho3c"]
+atlas = ExtResource("3_xowou")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vl8od"]
+atlas = ExtResource("3_xowou")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lbdv"]
+atlas = ExtResource("3_xowou")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqtme"]
+atlas = ExtResource("3_xowou")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qexxm"]
+atlas = ExtResource("3_xowou")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mod0w"]
+atlas = ExtResource("3_xowou")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2175e"]
+atlas = ExtResource("3_xowou")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7dg3"]
+atlas = ExtResource("3_xowou")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj3lg"]
+atlas = ExtResource("3_xowou")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2j82"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkl3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fgfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef1uj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciwu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foiex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6adf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dho3c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vl8od")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lbdv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqtme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qexxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mod0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2175e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7dg3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj3lg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wxtp3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_23msf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4a5no")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nova3"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb8uk"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gytl0"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdmh1"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d05fl"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfqiy"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibh5s"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tncpt"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0v4e6"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4rfd"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5jpk"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fyrp"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xwqp"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tpuu"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foc16"]
+atlas = ExtResource("10_gr6yo")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ndepj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nova3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb8uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gytl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdmh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d05fl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfqiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibh5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tncpt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0v4e6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4rfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5jpk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fyrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2xwqp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tpuu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foc16")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ax3sy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_23msf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_4a5no")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="TravelGui" type="CanvasLayer" groups=["travel_gui"]]
+process_mode = 3
+script = ExtResource("1_a6age")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_8lrae")
+
+[node name="Planet1" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planet1"]
+position = Vector2(0, -256)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_x2j82")
+frame = 5
+frame_progress = 0.731716
+
+[node name="Sprite2D2" type="Sprite2D" parent="Planet1"]
+position = Vector2(0, 270)
+texture = ExtResource("4_4gb8x")
+
+[node name="Label" type="Label" parent="Planet1/Sprite2D2"]
+offset_left = -196.0
+offset_top = -214.0
+offset_right = 196.0
+offset_bottom = -139.0
+theme_override_fonts/font = ExtResource("5_06ptw")
+theme_override_font_sizes/font_size = 64
+text = "tutorial"
+
+[node name="Label2" type="Label" parent="Planet1/Sprite2D2"]
+offset_top = -89.0
+offset_right = 124.0
+offset_bottom = -32.0
+theme_override_fonts/font = ExtResource("5_06ptw")
+theme_override_font_sizes/font_size = 48
+text = "0/10"
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet1/Sprite2D2/Label2"]
+position = Vector2(156, 27)
+texture = ExtResource("6_0jxgm")
+
+[node name="TravelLabel" type="Label" parent="Planet1/Sprite2D2"]
+visible = false
+offset_left = -156.0
+offset_top = 86.0
+offset_right = 278.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 64
+text = "para viajar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planet1/Sprite2D2/TravelLabel"]
+position = Vector2(-64, 32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wxtp3")
+
+[node name="UnlockLabel" type="Label" parent="Planet1/Sprite2D2/TravelLabel/AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 32
+text = "f"
+metadata/_edit_use_anchors_ = true
+
+[node name="YouAreHereLabel" type="Label" parent="Planet1/Sprite2D2"]
+visible = false
+offset_left = -198.0
+offset_top = 86.0
+offset_right = 199.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 64
+text = "estas aquí"
+
+[node name="Planet2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1920.0
+offset_right = 1960.0
+offset_bottom = 40.0
+scale = Vector2(0.8, 0.8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planet2"]
+position = Vector2(0, -256)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ndepj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Planet2"]
+position = Vector2(0, 270)
+texture = ExtResource("4_4gb8x")
+
+[node name="Label" type="Label" parent="Planet2/Sprite2D2"]
+offset_left = -208.0
+offset_top = -214.0
+offset_right = 208.0
+offset_bottom = -139.0
+theme_override_fonts/font = ExtResource("5_06ptw")
+theme_override_font_sizes/font_size = 64
+text = "planeta 1"
+
+[node name="Label2" type="Label" parent="Planet2/Sprite2D2"]
+offset_top = -89.0
+offset_right = 124.0
+offset_bottom = -32.0
+theme_override_fonts/font = ExtResource("5_06ptw")
+theme_override_font_sizes/font_size = 48
+text = "0/?"
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet2/Sprite2D2/Label2"]
+position = Vector2(156, 27)
+texture = ExtResource("6_0jxgm")
+
+[node name="TravelLabel" type="Label" parent="Planet2/Sprite2D2"]
+visible = false
+offset_left = -156.0
+offset_top = 86.0
+offset_right = 278.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 64
+text = "para viajar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Planet2/Sprite2D2/TravelLabel"]
+position = Vector2(-64, 32)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_wxtp3")
+
+[node name="UnlockLabel" type="Label" parent="Planet2/Sprite2D2/TravelLabel/AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 32
+text = "f"
+metadata/_edit_use_anchors_ = true
+
+[node name="YouAreHereLabel" type="Label" parent="Planet2/Sprite2D2"]
+visible = false
+offset_left = -198.0
+offset_top = 86.0
+offset_right = 199.0
+offset_bottom = 161.0
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 64
+text = "estas aquí"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(760, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_wxtp3")
+
+[node name="UnlockLabel" type="Label" parent="AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 32
+text = "d"
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-760, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_wxtp3")
+
+[node name="UnlockLabel" type="Label" parent="AnimatedSprite2D2"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 32
+text = "a"
+metadata/_edit_use_anchors_ = true
+
+[node name="CloseLabel" type="Label" parent="."]
+offset_left = -315.0
+offset_top = 437.0
+offset_right = -13.0
+offset_bottom = 476.0
+scale = Vector2(2, 2)
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 32
+text = "        para cerrar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CloseLabel"]
+position = Vector2(35.535, 18.58)
+sprite_frames = SubResource("SpriteFrames_ax3sy")
+
+[node name="UnlockLabel" type="Label" parent="CloseLabel/AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_equue")
+theme_override_font_sizes/font_size = 32
+text = "e"
+metadata/_edit_use_anchors_ = true

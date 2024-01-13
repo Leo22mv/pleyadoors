@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3uo5rg6ukos6"]
+
+[ext_resource type="Script" path="res://bullet.gd" id="1_7ryh7"]
+[ext_resource type="Texture2D" uid="uid://deuhuncnvhvur" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/5 Bullets/10.png" id="1_xsggs"]
+[ext_resource type="Texture2D" uid="uid://gf5bgogm1cp3" path="res://Assets/lights textures/quitTextureLight.png" id="3_n6u47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lakwi"]
+
+[node name="Bullet" type="StaticBody2D"]
+script = ExtResource("1_7ryh7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 16
+scale = Vector2(5, 5)
+texture = ExtResource("1_xsggs")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.69, 0.69)
+shape = SubResource("RectangleShape2D_lakwi")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.035, 0.06)
+range_item_cull_mask = 16
+texture = ExtResource("3_n6u47")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

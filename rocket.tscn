@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgdlbw8ox44li"]
+
+[ext_resource type="Texture2D" uid="uid://dcqqixi7g6ljc" path="res://Assets/space_breaker_asset/space_breaker_asset/Ships/Big/body_03.png" id="1_r8lq8"]
+[ext_resource type="Script" path="res://rocket.gd" id="1_yfhqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cppj"]
+size = Vector2(27.3468, 8.27972)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_utkn5"]
+size = Vector2(20, 50.747)
+
+[node name="Rocket" type="StaticBody2D"]
+script = ExtResource("1_yfhqd")
+
+[node name="RocketArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RocketArea"]
+position = Vector2(-0.5, 50.5)
+scale = Vector2(11.665, 11.665)
+shape = SubResource("RectangleShape2D_6cppj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -153)
+scale = Vector2(2, 2)
+texture = ExtResource("1_r8lq8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -153.728)
+scale = Vector2(10.1, 10.1)
+shape = SubResource("RectangleShape2D_utkn5")
+
+[connection signal="body_entered" from="RocketArea" to="." method="_on_rocket_area_body_entered"]
+[connection signal="body_exited" from="RocketArea" to="." method="_on_rocket_area_body_exited"]

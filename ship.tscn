@@ -1,0 +1,82 @@
+[gd_scene load_steps=9 format=3 uid="uid://40rath5aydvj"]
+
+[ext_resource type="Texture2D" uid="uid://bep80bi0jha87" path="res://Assets/Ship.png" id="1_6tgae"]
+[ext_resource type="Script" path="res://ship.gd" id="1_mt3c1"]
+[ext_resource type="FontFile" uid="uid://5jo2d5kfwtvd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future_thin.ttf" id="2_2ymje"]
+[ext_resource type="Texture2D" uid="uid://c6twlfd7wnd0x" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a1.png" id="3_2xqxh"]
+[ext_resource type="Texture2D" uid="uid://jdoaokwawtnm" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a2.png" id="4_n4vrc"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yumad"]
+radius = 10.5939
+height = 22.1509
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_glwqj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvdfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_2xqxh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_n4vrc")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Ship" type="StaticBody2D" groups=["ship"]]
+position = Vector2(1312, 760)
+script = ExtResource("1_mt3c1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6tgae")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.23, 6.23)
+shape = SubResource("CapsuleShape2D_yumad")
+
+[node name="ShipArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShipArea2D"]
+scale = Vector2(14.315, 14.315)
+shape = SubResource("CircleShape2D_glwqj")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -140.0
+offset_top = -112.0
+offset_right = 127.0
+offset_bottom = -73.0
+theme_override_fonts/font = ExtResource("2_2ymje")
+theme_override_font_sizes/font_size = 32
+text = "        para subir"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Label"]
+position = Vector2(35.535, 18.58)
+sprite_frames = SubResource("SpriteFrames_dvdfo")
+
+[node name="UnlockLabel" type="Label" parent="Label/AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_2ymje")
+theme_override_font_sizes/font_size = 32
+text = "e"
+metadata/_edit_use_anchors_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-64, 32)
+rotation = 1.5708
+target_position = Vector2(0, 64)
+
+[connection signal="body_entered" from="ShipArea2D" to="." method="_on_ship_area_2d_body_entered"]
+[connection signal="body_exited" from="ShipArea2D" to="." method="_on_ship_area_2d_body_exited"]

@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=3 uid="uid://dbsfgcv6mxjy0"]
+
+[ext_resource type="Script" path="res://shooter.gd" id="1_uv4qx"]
+[ext_resource type="PackedScene" uid="uid://d3uo5rg6ukos6" path="res://bullet.tscn" id="2_a0ga5"]
+[ext_resource type="Texture2D" uid="uid://bwh8aoueekaw2" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/2 Guns/10_1.png" id="2_kkb3p"]
+[ext_resource type="Texture2D" uid="uid://cynw387s67f03" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/3 Hands/3 Cyborg/3.png" id="3_g2r1h"]
+[ext_resource type="Texture2D" uid="uid://gp3mkr51xo4o" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/3 Hands/3 Cyborg/1.png" id="4_nxucy"]
+[ext_resource type="Texture2D" uid="uid://bw34wbcwwyuj1" path="res://Assets/free-guns-for-cyberpunk-characters-pixel-art/1 Characters/3 Cyborg/Idle1.png" id="4_yirfv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbjty"]
+atlas = ExtResource("4_yirfv")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dild5"]
+atlas = ExtResource("4_yirfv")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1px1y"]
+atlas = ExtResource("4_yirfv")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e31ml"]
+atlas = ExtResource("4_yirfv")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c2erx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbjty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dild5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1px1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e31ml")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w1nu"]
+size = Vector2(6.97279, 14.7959)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa5f0"]
+size = Vector2(3.06122, 15.136)
+
+[node name="Shooter" type="CharacterBody2D"]
+scale = Vector2(3, 3)
+script = ExtResource("1_uv4qx")
+bulletInstance = ExtResource("2_a0ga5")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+visible = false
+light_mask = 8
+position = Vector2(11, -2)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kkb3p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+light_mask = 8
+position = Vector2(-5, 0)
+texture = ExtResource("3_g2r1h")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+light_mask = 8
+position = Vector2(-7.66667, 0)
+texture = ExtResource("4_nxucy")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D3"]
+light_mask = 8
+position = Vector2(2.33333, 13.6667)
+rotation = 1.5708
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_kkb3p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 8
+sprite_frames = SubResource("SpriteFrames_c2erx")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-7.16667, 8.16667)
+scale = Vector2(1.96, 1.96)
+shape = SubResource("RectangleShape2D_3w1nu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.66667, 9.16665)
+scale = Vector2(1.96, 1.96)
+shape = SubResource("RectangleShape2D_wa5f0")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

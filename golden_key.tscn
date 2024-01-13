@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ble83q2tnyix5"]
+
+[ext_resource type="Script" path="res://Key.gd" id="1_7mu1a"]
+[ext_resource type="Texture2D" uid="uid://37olb01fllbp" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item014.png" id="2_t88s0"]
+[ext_resource type="Texture2D" uid="uid://c8ma1yhujckh6" path="res://Assets/lights textures/texturelight.png" id="3_x1esl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdhuk"]
+
+[node name="GoldenKey" type="StaticBody2D"]
+script = ExtResource("1_7mu1a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 8
+texture = ExtResource("2_t88s0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2.52, 2.52)
+shape = SubResource("RectangleShape2D_tdhuk")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+color = Color(0.797243, 0.652117, 1.15514e-06, 1)
+range_item_cull_mask = 8
+texture = ExtResource("3_x1esl")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

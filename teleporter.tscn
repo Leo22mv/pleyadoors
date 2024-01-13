@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm0xy7lwkakyl"]
+
+[ext_resource type="Script" path="res://teleporter.gd" id="1_i8r3q"]
+[ext_resource type="Texture2D" uid="uid://dytyh8wqtvnm3" path="res://Assets/teleporter/frame1.png" id="1_jdvc4"]
+[ext_resource type="Texture2D" uid="uid://b16dpwxnaja05" path="res://Assets/teleporter/frame2.png" id="2_l8x1n"]
+[ext_resource type="Texture2D" uid="uid://lfibwh18xhfj" path="res://Assets/teleporter/frame3.png" id="3_ey0w0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ftt4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jdvc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_l8x1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ey0w0")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_jdvc4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fjxs"]
+
+[node name="Teleporter" type="Node2D"]
+script = ExtResource("1_i8r3q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ftt4f")
+animation = &"active"
+
+[node name="TeleporterArea2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TeleporterArea2D"]
+scale = Vector2(12, 7)
+shape = SubResource("RectangleShape2D_6fjxs")
+
+[connection signal="body_entered" from="TeleporterArea2D" to="." method="_on_teleporter_area_2d_body_entered"]
+[connection signal="body_exited" from="TeleporterArea2D" to="." method="_on_teleporter_area_2d_body_exited"]

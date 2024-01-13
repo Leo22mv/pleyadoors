@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://5qee6oxm8p7v"]
+
+[ext_resource type="Texture2D" uid="uid://cnlndkghhxrv0" path="res://Assets/Particles/destroy_wall.png" id="1_cnbb8"]
+
+[sub_resource type="Curve" id="Curve_oxi0h"]
+_data = [Vector2(0, 0.994792), 0.0, -1.95544, 0, 0, Vector2(1, 0), -1.13542, 0.0, 0, 0]
+point_count = 2
+
+[node name="DestroyingWallParticles" type="CPUParticles2D"]
+emitting = false
+amount = 64
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_cnbb8")
+emission_shape = 3
+emission_rect_extents = Vector2(64, 64)
+gravity = Vector2(0, 0)
+angle_max = 360.0
+scale_amount_min = 0.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_oxi0h")

@@ -1,0 +1,208 @@
+[gd_scene load_steps=27 format=3 uid="uid://dmpqsvacpfd63"]
+
+[ext_resource type="Script" path="res://load_game_menu.gd" id="1_abu00"]
+[ext_resource type="Texture2D" uid="uid://chaj2pqqdsfai" path="res://Assets/Backgrounds/loadGameBg.png" id="2_xwlx2"]
+[ext_resource type="Texture2D" uid="uid://b7wbo1fvq35t8" path="res://Assets/Buttons/emptySlot1.png" id="3_dnmtj"]
+[ext_resource type="Texture2D" uid="uid://t0y71c4xy6fv" path="res://Assets/Buttons/emptySlot1Active.png" id="4_a5fhg"]
+[ext_resource type="Texture2D" uid="uid://cb8ajkxl0bj8a" path="res://Assets/Buttons/emptySlot1Hover.png" id="5_i5qkc"]
+[ext_resource type="Texture2D" uid="uid://cg3gvps4r81s8" path="res://Assets/Buttons/emptySlot1Disabled.png" id="6_05is2"]
+[ext_resource type="FontFile" uid="uid://b3qjvntr1xwwd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future.ttf" id="7_232nk"]
+[ext_resource type="Texture2D" uid="uid://dqtkwa35swd15" path="res://Assets/Buttons/emptySlot2.png" id="7_kyu1o"]
+[ext_resource type="Texture2D" uid="uid://dq8it2maqj4df" path="res://Assets/Buttons/emptySlot2Active.png" id="8_gaqgp"]
+[ext_resource type="Texture2D" uid="uid://cys6slljhpaoa" path="res://Assets/Buttons/emptySlot2Hover.png" id="9_5nf75"]
+[ext_resource type="Texture2D" uid="uid://btnr0n0onacik" path="res://Assets/Buttons/emptySlot2Disabled.png" id="10_nydhj"]
+[ext_resource type="Texture2D" uid="uid://0ywucwcr5fgp" path="res://Assets/Buttons/emptySlot3.png" id="11_fb3cb"]
+[ext_resource type="Texture2D" uid="uid://dssj12wylxhbc" path="res://Assets/Buttons/emptySlot3Active.png" id="12_e6re5"]
+[ext_resource type="Texture2D" uid="uid://baviiw0l31d" path="res://Assets/Buttons/emptySlot3Hover.png" id="13_7lif4"]
+[ext_resource type="Texture2D" uid="uid://c6mncpvxv7luv" path="res://Assets/Buttons/emptySlot3Disabled.png" id="14_5vkb3"]
+[ext_resource type="Texture2D" uid="uid://cg18yq4nltr4f" path="res://Assets/Buttons/returnButton.png" id="15_c151r"]
+[ext_resource type="Texture2D" uid="uid://c1h1654vjojfo" path="res://Assets/Buttons/returnButtonActive.png" id="16_53cqp"]
+[ext_resource type="Texture2D" uid="uid://c3a5441e1rul1" path="res://Assets/Buttons/returnButtonHover.png" id="17_vsedm"]
+[ext_resource type="Texture2D" uid="uid://cpaesaoxugyvy" path="res://Assets/Backgrounds/confirmLoadPopup.png" id="19_tryhn"]
+[ext_resource type="Texture2D" uid="uid://waycglg31gco" path="res://Assets/Buttons/confirmButton.png" id="20_h5h4j"]
+[ext_resource type="Texture2D" uid="uid://dtma507gvn67i" path="res://Assets/Buttons/confirmButtonActive.png" id="21_7p4et"]
+[ext_resource type="Texture2D" uid="uid://qsonal5gqo5c" path="res://Assets/Buttons/confirmButtonHover.png" id="22_ks57f"]
+[ext_resource type="Texture2D" uid="uid://dooue3xe4qiin" path="res://Assets/Buttons/noConfirmQuitButton.png" id="23_folk2"]
+[ext_resource type="Texture2D" uid="uid://ctcir6c32ws46" path="res://Assets/Buttons/noConfirmQuitButtonActive.png" id="24_wiv2v"]
+[ext_resource type="Texture2D" uid="uid://c66k1gab0givo" path="res://Assets/Buttons/noConfirmQuitButtonHover.png" id="25_ynm88"]
+
+[sub_resource type="Theme" id="Theme_xb7t0"]
+
+[node name="LoadGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_abu00")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(960, 540)
+texture = ExtResource("2_xwlx2")
+
+[node name="Slot1Button" type="TextureButton" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 560.0
+offset_top = 380.0
+offset_right = 1360.0
+offset_bottom = 480.0
+texture_normal = ExtResource("3_dnmtj")
+texture_pressed = ExtResource("4_a5fhg")
+texture_hover = ExtResource("5_i5qkc")
+texture_disabled = ExtResource("6_05is2")
+
+[node name="Label" type="Label" parent="Slot1Button"]
+visible = false
+layout_mode = 0
+offset_left = 745.0
+offset_top = 60.0
+offset_right = 772.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("7_232nk")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Label2" type="Label" parent="Slot1Button"]
+visible = false
+layout_mode = 0
+offset_left = 800.0
+offset_top = 25.0
+offset_right = 948.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("7_232nk")
+theme_override_font_sizes/font_size = 24
+text = "Tutorial"
+
+[node name="Slot2Button" type="TextureButton" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 560.0
+offset_top = 530.0
+offset_right = 960.0
+offset_bottom = 630.0
+theme = SubResource("Theme_xb7t0")
+texture_normal = ExtResource("7_kyu1o")
+texture_pressed = ExtResource("8_gaqgp")
+texture_hover = ExtResource("9_5nf75")
+texture_disabled = ExtResource("10_nydhj")
+
+[node name="Label" type="Label" parent="Slot2Button"]
+visible = false
+layout_mode = 0
+offset_left = 745.0
+offset_top = 60.0
+offset_right = 772.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("7_232nk")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Label2" type="Label" parent="Slot2Button"]
+visible = false
+layout_mode = 0
+offset_left = 800.0
+offset_top = 25.0
+offset_right = 948.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("7_232nk")
+theme_override_font_sizes/font_size = 24
+text = "Tutorial"
+
+[node name="Slot3Button" type="TextureButton" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 560.0
+offset_top = 680.0
+offset_right = 960.0
+offset_bottom = 780.0
+texture_normal = ExtResource("11_fb3cb")
+texture_pressed = ExtResource("12_e6re5")
+texture_hover = ExtResource("13_7lif4")
+texture_disabled = ExtResource("14_5vkb3")
+
+[node name="Label" type="Label" parent="Slot3Button"]
+visible = false
+layout_mode = 0
+offset_left = 745.0
+offset_top = 60.0
+offset_right = 772.0
+offset_bottom = 99.0
+theme_override_fonts/font = ExtResource("7_232nk")
+theme_override_font_sizes/font_size = 32
+text = "0"
+
+[node name="Label2" type="Label" parent="Slot3Button"]
+visible = false
+layout_mode = 0
+offset_left = 800.0
+offset_top = 25.0
+offset_right = 948.0
+offset_bottom = 55.0
+theme_override_fonts/font = ExtResource("7_232nk")
+theme_override_font_sizes/font_size = 24
+text = "Tutorial"
+
+[node name="ReturnButton" type="TextureButton" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 760.0
+offset_top = 830.0
+offset_right = 1160.0
+offset_bottom = 930.0
+texture_normal = ExtResource("15_c151r")
+texture_pressed = ExtResource("16_53cqp")
+texture_hover = ExtResource("17_vsedm")
+
+[node name="ConfirmLoadPopup" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1000.0
+offset_bottom = 580.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ConfirmLoadPopup"]
+light_mask = 2
+z_index = 1
+texture = ExtResource("19_tryhn")
+
+[node name="ConfirmLoadButton" type="TextureButton" parent="ConfirmLoadPopup"]
+light_mask = 2
+z_index = 1
+layout_mode = 0
+offset_left = -200.0
+offset_top = -61.0
+offset_right = 200.0
+offset_bottom = 39.0
+texture_normal = ExtResource("20_h5h4j")
+texture_pressed = ExtResource("21_7p4et")
+texture_hover = ExtResource("22_ks57f")
+
+[node name="NoConfirmLoadButton" type="TextureButton" parent="ConfirmLoadPopup"]
+light_mask = 2
+z_index = 1
+layout_mode = 0
+offset_left = -200.0
+offset_top = 89.0
+offset_right = 200.0
+offset_bottom = 189.0
+texture_normal = ExtResource("23_folk2")
+texture_pressed = ExtResource("24_wiv2v")
+texture_hover = ExtResource("25_ynm88")
+
+[connection signal="button_up" from="Slot1Button" to="." method="_on_slot_1_button_button_up"]
+[connection signal="mouse_entered" from="Slot1Button" to="." method="_on_slot_1_button_mouse_entered"]
+[connection signal="mouse_exited" from="Slot1Button" to="." method="_on_slot_1_button_mouse_exited"]
+[connection signal="button_up" from="Slot2Button" to="." method="_on_slot_2_button_button_up"]
+[connection signal="mouse_entered" from="Slot2Button" to="." method="_on_slot_2_button_mouse_entered"]
+[connection signal="mouse_exited" from="Slot2Button" to="." method="_on_slot_2_button_mouse_exited"]
+[connection signal="button_up" from="Slot3Button" to="." method="_on_slot_3_button_button_up"]
+[connection signal="mouse_entered" from="Slot3Button" to="." method="_on_slot_3_button_mouse_entered"]
+[connection signal="mouse_exited" from="Slot3Button" to="." method="_on_slot_3_button_mouse_exited"]
+[connection signal="button_up" from="ReturnButton" to="." method="_on_return_button_button_up"]
+[connection signal="button_up" from="ConfirmLoadPopup/ConfirmLoadButton" to="." method="_on_confirm_load_button_button_up"]
+[connection signal="button_up" from="ConfirmLoadPopup/NoConfirmLoadButton" to="." method="_on_no_confirm_load_button_button_up"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtmx316mjeirl"]
+
+[ext_resource type="Script" path="res://OptionsMenu.gd" id="1_y02ab"]
+[ext_resource type="Texture2D" uid="uid://bbxjw6jvg8dch" path="res://Assets/Backgrounds/OptionsMenuBg.png" id="2_uquax"]
+[ext_resource type="Texture2D" uid="uid://cg18yq4nltr4f" path="res://Assets/Buttons/returnButton.png" id="3_kgb0n"]
+[ext_resource type="Texture2D" uid="uid://c1h1654vjojfo" path="res://Assets/Buttons/returnButtonActive.png" id="4_ujpq7"]
+[ext_resource type="Texture2D" uid="uid://c3a5441e1rul1" path="res://Assets/Buttons/returnButtonHover.png" id="5_c482e"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y02ab")
+
+[node name="Bg" type="Sprite2D" parent="."]
+light_mask = 2
+position = Vector2(960, 540)
+texture = ExtResource("2_uquax")
+
+[node name="ReturnButton" type="TextureButton" parent="."]
+light_mask = 2
+layout_mode = 0
+offset_left = 760.0
+offset_top = 400.0
+offset_right = 1160.0
+offset_bottom = 500.0
+texture_normal = ExtResource("3_kgb0n")
+texture_pressed = ExtResource("4_ujpq7")
+texture_hover = ExtResource("5_c482e")
+
+[connection signal="button_up" from="ReturnButton" to="." method="_on_return_button_button_up"]

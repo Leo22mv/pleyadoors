@@ -1,0 +1,125 @@
+[gd_scene load_steps=26 format=3 uid="uid://c03nucxy5wm0b"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_fauar"]
+[ext_resource type="Texture2D" uid="uid://bexj8lh7mrupx" path="res://Assets/Backgrounds/MainMenuBg4.png" id="2_72ipi"]
+[ext_resource type="Texture2D" uid="uid://cmf8noxbytv7l" path="res://Assets/Buttons/newGameButton.png" id="3_ay06b"]
+[ext_resource type="Texture2D" uid="uid://d2tkpl53gphxc" path="res://Assets/Buttons/newGameButtonActive.png" id="4_2xvjt"]
+[ext_resource type="Texture2D" uid="uid://b8ltc1c27nfg8" path="res://Assets/Buttons/newGameButtonHover.png" id="5_l8w3a"]
+[ext_resource type="Texture2D" uid="uid://bk0guenrykja3" path="res://Assets/Buttons/loadGameButton.png" id="6_icvxn"]
+[ext_resource type="Texture2D" uid="uid://bjjdeuwnv4sff" path="res://Assets/Buttons/loadGameButtonActive.png" id="7_mepqx"]
+[ext_resource type="Texture2D" uid="uid://b78hk1cf5s3h2" path="res://Assets/Buttons/loadGameButtonHover.png" id="8_vs7du"]
+[ext_resource type="Texture2D" uid="uid://d4jngaliklcs0" path="res://Assets/Buttons/loadGameButtonDisabled.png" id="9_h17su"]
+[ext_resource type="Texture2D" uid="uid://fv3k6sgk5fy3" path="res://Assets/Buttons/optionsButton.png" id="10_3gbkr"]
+[ext_resource type="Texture2D" uid="uid://btfr0yq43q5p2" path="res://Assets/Buttons/optionsButtonActive.png" id="11_t1sfq"]
+[ext_resource type="Texture2D" uid="uid://x1uhwqxr8ex8" path="res://Assets/Buttons/optionsButtonHover.png" id="12_qns8f"]
+[ext_resource type="Texture2D" uid="uid://4po3ub16deha" path="res://Assets/Buttons/quitButton.png" id="13_hw7kh"]
+[ext_resource type="Texture2D" uid="uid://cgyel2k34ha42" path="res://Assets/Buttons/quitButtonActive.png" id="14_ww1h6"]
+[ext_resource type="Texture2D" uid="uid://cm6ryr4djlwfq" path="res://Assets/Buttons/quitButtonHover.png" id="15_qiugc"]
+[ext_resource type="Texture2D" uid="uid://baewrh01lqwml" path="res://Assets/Backgrounds/quitPopup.png" id="16_isyf6"]
+[ext_resource type="Script" path="res://Sprite2D.gd" id="17_bb2hx"]
+[ext_resource type="Texture2D" uid="uid://cgpgmq45wmnbe" path="res://Assets/Backgrounds/blackBg.png" id="17_kv5fe"]
+[ext_resource type="Texture2D" uid="uid://byik1scgxuoya" path="res://Assets/Buttons/confirmQuitButton.png" id="19_djoja"]
+[ext_resource type="Texture2D" uid="uid://beim1sgv1t15r" path="res://Assets/Buttons/confirmQuitButtonActive.png" id="20_u4eey"]
+[ext_resource type="Texture2D" uid="uid://b5ghbqaopx14t" path="res://Assets/Buttons/confirmQuitButtonHover.png" id="21_f0rm1"]
+[ext_resource type="Texture2D" uid="uid://dooue3xe4qiin" path="res://Assets/Buttons/noConfirmQuitButton.png" id="22_wp4mf"]
+[ext_resource type="Texture2D" uid="uid://ctcir6c32ws46" path="res://Assets/Buttons/noConfirmQuitButtonActive.png" id="23_7ccay"]
+[ext_resource type="Texture2D" uid="uid://c66k1gab0givo" path="res://Assets/Buttons/noConfirmQuitButtonHover.png" id="24_cqbcw"]
+
+[sub_resource type="Theme" id="Theme_2i0ne"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fauar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_72ipi")
+
+[node name="NewGameButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 530.0
+offset_right = 1160.0
+offset_bottom = 630.0
+theme = SubResource("Theme_2i0ne")
+texture_normal = ExtResource("3_ay06b")
+texture_pressed = ExtResource("4_2xvjt")
+texture_hover = ExtResource("5_l8w3a")
+
+[node name="LoadGameButton" type="TextureButton" parent="." groups=["load game button"]]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 380.0
+offset_right = 1160.0
+offset_bottom = 480.0
+texture_normal = ExtResource("6_icvxn")
+texture_pressed = ExtResource("7_mepqx")
+texture_hover = ExtResource("8_vs7du")
+texture_disabled = ExtResource("9_h17su")
+
+[node name="OptionsButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 680.0
+offset_right = 1160.0
+offset_bottom = 780.0
+texture_normal = ExtResource("10_3gbkr")
+texture_pressed = ExtResource("11_t1sfq")
+texture_hover = ExtResource("12_qns8f")
+
+[node name="QuitButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 830.0
+offset_right = 1160.0
+offset_bottom = 930.0
+texture_normal = ExtResource("13_hw7kh")
+texture_pressed = ExtResource("14_ww1h6")
+texture_hover = ExtResource("15_qiugc")
+
+[node name="QuitPopup" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1000.0
+offset_bottom = 580.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="QuitPopup"]
+z_index = 1
+texture = ExtResource("16_isyf6")
+
+[node name="Sprite2D" type="Sprite2D" parent="QuitPopup"]
+texture = ExtResource("17_kv5fe")
+script = ExtResource("17_bb2hx")
+
+[node name="ConfirmQuitButton" type="TextureButton" parent="QuitPopup"]
+z_index = 1
+layout_mode = 0
+offset_left = -200.0
+offset_top = -61.0
+offset_right = 200.0
+offset_bottom = 39.0
+texture_normal = ExtResource("19_djoja")
+texture_pressed = ExtResource("20_u4eey")
+texture_hover = ExtResource("21_f0rm1")
+
+[node name="NoConfirmQuitButton" type="TextureButton" parent="QuitPopup"]
+z_index = 1
+layout_mode = 0
+offset_left = -200.0
+offset_top = 89.0
+offset_right = 200.0
+offset_bottom = 189.0
+texture_normal = ExtResource("22_wp4mf")
+texture_pressed = ExtResource("23_7ccay")
+texture_hover = ExtResource("24_cqbcw")
+
+[connection signal="button_up" from="NewGameButton" to="." method="_on_new_game_button_button_up"]
+[connection signal="button_up" from="LoadGameButton" to="." method="_on_load_game_button_button_up"]
+[connection signal="button_up" from="OptionsButton" to="." method="_on_options_button_button_up"]
+[connection signal="button_up" from="QuitButton" to="." method="_on_button_4_button_up"]
+[connection signal="button_up" from="QuitPopup/ConfirmQuitButton" to="." method="_on_confirm_quit_button_button_up"]
+[connection signal="button_up" from="QuitPopup/NoConfirmQuitButton" to="." method="_on_no_confirm_quit_button_button_up"]

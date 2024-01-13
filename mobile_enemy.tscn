@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjuld51sp3tn0"]
+
+[ext_resource type="Script" path="res://MobileEnemy.gd" id="1_mw3pn"]
+[ext_resource type="Texture2D" uid="uid://3hde6y0taibm" path="res://Assets/kenney_platformer-art-extended-enemies/Enemy sprites/spinner.png" id="2_6sfuo"]
+[ext_resource type="Texture2D" uid="uid://cy7dwcsj6cpc4" path="res://Assets/kenney_platformer-art-extended-enemies/Enemy sprites/spinner_spin.png" id="3_ue64x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06nun"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6sfuo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ue64x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkx1y"]
+
+[node name="MobileEnemy" type="CharacterBody2D"]
+position = Vector2(-8128, 5000)
+script = ExtResource("1_mw3pn")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 9
+sprite_frames = SubResource("SpriteFrames_06nun")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(12.645, 0)
+scale = Vector2(1.225, 1.54)
+shape = SubResource("CapsuleShape2D_wkx1y")
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-12.7, 0)
+scale = Vector2(1.225, 1.54)
+shape = SubResource("CapsuleShape2D_wkx1y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

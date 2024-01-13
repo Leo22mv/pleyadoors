@@ -1,0 +1,345 @@
+[gd_scene load_steps=24 format=3 uid="uid://do21vn1utji6n"]
+
+[ext_resource type="Script" path="res://GUI.gd" id="1_m26kh"]
+[ext_resource type="Texture2D" uid="uid://c5ks6e0l63hrw" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item017.png" id="2_0cfxg"]
+[ext_resource type="Texture2D" uid="uid://dpckmiq6vnisr" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item005.png" id="3_1kf6r"]
+[ext_resource type="Texture2D" uid="uid://dbqodm3r0ovpk" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item011.png" id="4_047d8"]
+[ext_resource type="Texture2D" uid="uid://dqhon4rywoc08" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item009.png" id="5_lqtb6"]
+[ext_resource type="FontFile" uid="uid://5jo2d5kfwtvd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future_thin.ttf" id="6_m76wb"]
+[ext_resource type="Texture2D" uid="uid://gf5bgogm1cp3" path="res://Assets/lights textures/quitTextureLight.png" id="7_jwm8v"]
+[ext_resource type="Texture2D" uid="uid://ddj3cteh27vkr" path="res://Assets/Backgrounds/StoreBg.png" id="8_dnic3"]
+[ext_resource type="FontFile" uid="uid://b3qjvntr1xwwd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future.ttf" id="9_yb4wi"]
+[ext_resource type="Texture2D" uid="uid://c4cuoydxvk4xd" path="res://Assets/Backgrounds/StoreItemPopup.png" id="10_pn5nb"]
+[ext_resource type="Texture2D" uid="uid://bw158oetanul" path="res://Assets/Items/+1maxHealth.png" id="11_trqek"]
+[ext_resource type="Texture2D" uid="uid://bx3kf1xf0wnno" path="res://Assets/Buttons/buyButton.png" id="12_7wjj4"]
+[ext_resource type="Texture2D" uid="uid://468274fjhq5l" path="res://Assets/Buttons/buyButtonActive.png" id="13_jlicv"]
+[ext_resource type="Texture2D" uid="uid://brk0xdc4hgt02" path="res://Assets/Buttons/buyButtonHover.png" id="14_q12s5"]
+[ext_resource type="Texture2D" uid="uid://c6twlfd7wnd0x" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a1.png" id="15_t32ku"]
+[ext_resource type="Texture2D" uid="uid://jdoaokwawtnm" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a2.png" id="16_tejqv"]
+[ext_resource type="Texture2D" uid="uid://dgik3hmkblf6v" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item012.png" id="17_rivry"]
+[ext_resource type="Texture2D" uid="uid://dx6s2t30eg1w2" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item016.png" id="18_cwg0s"]
+[ext_resource type="Texture2D" uid="uid://37olb01fllbp" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item014.png" id="19_0gpxk"]
+[ext_resource type="Texture2D" uid="uid://67f5l2qd0c5d" path="res://Assets/kenney_simplified-platformer-pack/PNG/Items/platformPack_item015.png" id="20_fjd1v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k0ksk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0cfxg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1kf6r")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_047d8")
+}],
+"loop": true,
+"name": &"half",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20vah"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_t32ku")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_tejqv")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hpf5k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_rivry")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_cwg0s")
+}],
+"loop": true,
+"name": &"filled",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_0gpxk")
+}],
+"loop": true,
+"name": &"golden",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_fjd1v")
+}],
+"loop": true,
+"name": &"green",
+"speed": 5.0
+}]
+
+[node name="GUI" type="Control" groups=["gui"]]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_m26kh")
+
+[node name="Life" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 1048.0
+offset_right = 32.0
+offset_bottom = 1048.0
+
+[node name="Heart1" type="AnimatedSprite2D" parent="Life"]
+light_mask = 4
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_k0ksk")
+
+[node name="Heart2" type="AnimatedSprite2D" parent="Life"]
+light_mask = 4
+position = Vector2(64, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_k0ksk")
+
+[node name="Heart3" type="AnimatedSprite2D" parent="Life"]
+light_mask = 4
+position = Vector2(128, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_k0ksk")
+
+[node name="Heart4" type="AnimatedSprite2D" parent="Life"]
+visible = false
+light_mask = 4
+position = Vector2(192, 0)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_k0ksk")
+
+[node name="Gems" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 984.0
+offset_right = 32.0
+offset_bottom = 984.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Gems"]
+light_mask = 4
+texture = ExtResource("5_lqtb6")
+
+[node name="Label" type="Label" parent="Gems"]
+light_mask = 4
+layout_mode = 0
+offset_left = 42.0
+offset_top = -35.0
+offset_right = 87.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("6_m76wb")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(960, 535.5)
+scale = Vector2(2.4475, 2.34937)
+range_item_cull_mask = 6
+texture = ExtResource("7_jwm8v")
+
+[node name="Store" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 1000.0
+offset_bottom = 580.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Store"]
+texture = ExtResource("8_dnic3")
+
+[node name="Label" type="Label" parent="Store"]
+layout_mode = 0
+offset_left = -334.0
+offset_top = -480.0
+offset_right = 341.0
+offset_bottom = -307.0
+theme_override_fonts/font = ExtResource("9_yb4wi")
+theme_override_font_sizes/font_size = 150
+text = "tienda"
+
+[node name="Item" type="Control" parent="Store"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bg" type="Sprite2D" parent="Store/Item"]
+texture = ExtResource("10_pn5nb")
+
+[node name="Title" type="Label" parent="Store/Item"]
+layout_mode = 0
+offset_left = -265.0
+offset_top = -300.0
+offset_right = 266.0
+offset_bottom = -216.0
+theme_override_fonts/font = ExtResource("9_yb4wi")
+theme_override_font_sizes/font_size = 72
+text = "+1 vida max"
+
+[node name="Description" type="Label" parent="Store/Item"]
+layout_mode = 0
+offset_left = -267.0
+offset_right = 268.0
+offset_bottom = 30.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_yb4wi")
+theme_override_font_sizes/font_size = 24
+text = "Incrementa en 1 la salud máxima"
+
+[node name="Sprite2D" type="Sprite2D" parent="Store/Item"]
+position = Vector2(0, -118)
+texture = ExtResource("11_trqek")
+
+[node name="Prize" type="Label" parent="Store/Item"]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 58.23
+offset_right = 231.0
+offset_bottom = 115.23
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_yb4wi")
+theme_override_font_sizes/font_size = 48
+text = "10"
+
+[node name="TextureButton" type="TextureButton" parent="Store/Item"]
+layout_mode = 0
+offset_left = -200.0
+offset_top = 150.0
+offset_right = 200.0
+offset_bottom = 250.0
+texture_normal = ExtResource("12_7wjj4")
+texture_pressed = ExtResource("13_jlicv")
+texture_hover = ExtResource("14_q12s5")
+
+[node name="InsufficientMoneyLabel" type="Label" parent="Store"]
+visible = false
+layout_mode = 0
+offset_left = -310.0
+offset_top = 310.0
+offset_right = 311.0
+offset_bottom = 349.0
+theme_override_fonts/font = ExtResource("9_yb4wi")
+theme_override_font_sizes/font_size = 32
+text = "no tenes suficientes gemas"
+
+[node name="VoidStoreLabel" type="Label" parent="Store"]
+visible = false
+layout_mode = 0
+offset_left = -138.0
+offset_top = -270.0
+offset_right = 139.0
+offset_bottom = -231.0
+theme_override_fonts/font = ExtResource("9_yb4wi")
+theme_override_font_sizes/font_size = 32
+text = "tienda vacía"
+
+[node name="CloseLabel" type="Label" parent="Store"]
+layout_mode = 0
+offset_left = -151.0
+offset_top = 359.0
+offset_right = 152.0
+offset_bottom = 398.0
+theme_override_fonts/font = ExtResource("6_m76wb")
+theme_override_font_sizes/font_size = 32
+text = "        para cerrar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Store/CloseLabel"]
+position = Vector2(35.535, 18.58)
+sprite_frames = SubResource("SpriteFrames_20vah")
+
+[node name="UnlockLabel" type="Label" parent="Store/CloseLabel/AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_m76wb")
+theme_override_font_sizes/font_size = 32
+text = "e"
+metadata/_edit_use_anchors_ = true
+
+[node name="Keys" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1888.0
+offset_top = 1048.0
+offset_right = 1888.0
+offset_bottom = 1048.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Keys"]
+light_mask = 4
+sprite_frames = SubResource("SpriteFrames_hpf5k")
+animation = &"green"
+
+[node name="Label" type="Label" parent="Keys/AnimatedSprite2D"]
+light_mask = 4
+offset_top = -35.0
+offset_right = 45.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("6_m76wb")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Keys"]
+light_mask = 4
+position = Vector2(0, -64)
+sprite_frames = SubResource("SpriteFrames_hpf5k")
+animation = &"filled"
+
+[node name="Label" type="Label" parent="Keys/AnimatedSprite2D2"]
+light_mask = 4
+offset_top = -35.0
+offset_right = 45.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("6_m76wb")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Keys"]
+light_mask = 4
+position = Vector2(0, -128)
+sprite_frames = SubResource("SpriteFrames_hpf5k")
+animation = &"golden"
+
+[node name="Label" type="Label" parent="Keys/AnimatedSprite2D3"]
+light_mask = 4
+offset_top = -35.0
+offset_right = 45.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("6_m76wb")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[connection signal="button_up" from="Store/Item/TextureButton" to="." method="_on_texture_button_button_up"]

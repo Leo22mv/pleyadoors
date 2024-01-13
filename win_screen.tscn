@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3ec67muysomh"]
+
+[ext_resource type="Script" path="res://win_screen.gd" id="1_sr7xe"]
+[ext_resource type="FontFile" uid="uid://5jo2d5kfwtvd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future_thin.ttf" id="1_vakls"]
+
+[node name="WinScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sr7xe")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 356.0
+offset_right = 1564.0
+offset_bottom = 285.0
+theme_override_fonts/font = ExtResource("1_vakls")
+theme_override_font_sizes/font_size = 250
+text = "ganaste"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(960, 540)
+
+[node name="ReturnButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 760.0
+offset_top = 400.0
+offset_right = 1160.0
+offset_bottom = 500.0
+
+[connection signal="button_up" from="ReturnButton" to="." method="_on_return_button_button_up"]

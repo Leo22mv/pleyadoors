@@ -1,0 +1,194 @@
+[gd_scene load_steps=14 format=3 uid="uid://dyp3b48xb6gwf"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_5y7b6"]
+[ext_resource type="Texture2D" uid="uid://bfd82q287ajlx" path="res://Assets/Particles/dash.png" id="2_1eymq"]
+[ext_resource type="SpriteFrames" uid="uid://cjatkvhm4s1xj" path="res://Assets/Player spritesheets/SpriteFrames/white5.tres" id="2_sbv1u"]
+[ext_resource type="FontFile" uid="uid://5jo2d5kfwtvd" path="res://Assets/kenney_ui-pack-space-expansion/Fonts/kenvector_future_thin.ttf" id="7_imr51"]
+[ext_resource type="Texture2D" uid="uid://bvxvdd2txr4bf" path="res://Assets/Particles/jump_particle.png" id="8_cbiwi"]
+[ext_resource type="Texture2D" uid="uid://c6twlfd7wnd0x" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a1.png" id="9_hdubv"]
+[ext_resource type="Texture2D" uid="uid://jdoaokwawtnm" path="res://Assets/GUI_Essential_Free/Complete_GUI_Essential_Pack_Free_Version/01_Basic_Collection/01_Flat_Theme/Sprites/UI_Flat_Button_Small_Lock_01a2.png" id="10_cojbe"]
+[ext_resource type="Texture2D" uid="uid://c8ma1yhujckh6" path="res://Assets/lights textures/texturelight.png" id="11_drvhv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dvdfo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_hdubv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_cojbe")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24fn2"]
+size = Vector2(295, 20)
+
+[sub_resource type="Curve" id="Curve_ju7fc"]
+_data = [Vector2(1e-05, 1), 100000.0, -1.0266, 1, 0, Vector2(1, 0), -1.02464, 100000.0, 0, 1]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1ysg"]
+size = Vector2(18.6131, 26.1651)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukm8r"]
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+z_index = 1
+position = Vector2(160, 832)
+script = ExtResource("1_5y7b6")
+
+[node name="HurtDisplacementTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="ComingSoonLabel" type="Label" parent="."]
+visible = false
+offset_left = -134.0
+offset_top = -103.0
+offset_right = 134.0
+offset_bottom = -64.0
+theme_override_fonts/font = ExtResource("7_imr51")
+theme_override_font_sizes/font_size = 32
+text = "próximamente"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -140.0
+offset_top = -112.0
+offset_right = 127.0
+offset_bottom = -73.0
+theme_override_fonts/font = ExtResource("7_imr51")
+theme_override_font_sizes/font_size = 32
+text = "        para bajar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Label"]
+position = Vector2(35.535, 18.58)
+sprite_frames = SubResource("SpriteFrames_dvdfo")
+
+[node name="UnlockLabel" type="Label" parent="Label/AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_imr51")
+theme_override_font_sizes/font_size = 32
+text = "e"
+metadata/_edit_use_anchors_ = true
+
+[node name="InteractLabel" type="Label" parent="."]
+visible = false
+light_mask = 4
+offset_left = -156.0
+offset_top = -103.0
+offset_right = 141.0
+offset_bottom = -64.0
+theme_override_fonts/font = ExtResource("7_imr51")
+theme_override_font_sizes/font_size = 32
+text = "        interactuar"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="InteractLabel"]
+position = Vector2(35.535, 18.58)
+sprite_frames = SubResource("SpriteFrames_dvdfo")
+
+[node name="UnlockLabel" type="Label" parent="InteractLabel/AnimatedSprite2D"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 16.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_imr51")
+theme_override_font_sizes/font_size = 32
+text = "e"
+metadata/_edit_use_anchors_ = true
+
+[node name="HurtBlinkTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="HurtBlinkingTimer" type="Timer" parent="HurtBlinkTimer"]
+wait_time = 0.2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="GPUParticles2D" type="CPUParticles2D" parent="Node2D"]
+light_mask = 9
+position = Vector2(7, 0)
+emitting = false
+amount = 20
+lifetime = 0.2
+one_shot = true
+explosiveness = 0.5
+texture = ExtResource("2_1eymq")
+gravity = Vector2(0, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(7, 0)
+sprite_frames = ExtResource("2_sbv1u")
+animation = &"idle"
+
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
+energy = 0.7
+texture = ExtResource("11_drvhv")
+texture_scale = 1.95
+
+[node name="Node2D" type="Node2D" parent="Node2D"]
+position = Vector2(71, 0)
+
+[node name="RigidBody2D" type="Area2D" parent="Node2D"]
+position = Vector2(7, 0)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Node2D/RigidBody2D"]
+position = Vector2(-9.5, 44)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("RectangleShape2D_24fn2")
+
+[node name="RayCast2D" type="RayCast2D" parent="Node2D"]
+position = Vector2(7, 0)
+rotation = -1.5708
+target_position = Vector2(0, 80)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Node2D"]
+visibility_layer = 9
+position = Vector2(7, 45)
+emitting = false
+amount = 10
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("8_cbiwi")
+emission_shape = 1
+emission_sphere_radius = 21.27
+gravity = Vector2(50, 0)
+initial_velocity_max = 20.0
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_ju7fc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.5, 0)
+scale = Vector2(2.74, 3.755)
+shape = SubResource("RectangleShape2D_v1ysg")
+
+[node name="ShipCollision" type="CollisionShape2D" parent="."]
+scale = Vector2(6.83, 6.83)
+shape = SubResource("RectangleShape2D_ukm8r")
+disabled = true
+
+[node name="AttackDelayTimer" type="Timer" parent="."]
+wait_time = 0.14
+one_shot = true
+
+[connection signal="timeout" from="HurtDisplacementTimer" to="." method="_on_hurt_displacement_timer_timeout"]
+[connection signal="timeout" from="HurtBlinkTimer" to="." method="_on_hurt_blink_timer_timeout"]
+[connection signal="timeout" from="HurtBlinkTimer/HurtBlinkingTimer" to="." method="_on_hurt_blinking_timer_timeout"]
+[connection signal="animation_finished" from="Node2D/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="AttackDelayTimer" to="." method="_on_attack_delay_timer_timeout"]

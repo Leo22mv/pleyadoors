@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgbrqkndjm3e"]
+
+[ext_resource type="Texture2D" uid="uid://cbk4812u3usx2" path="res://Assets/tiles/broken_wall.png" id="1_67nom"]
+[ext_resource type="PackedScene" uid="uid://5qee6oxm8p7v" path="res://destroying_wall_particles.tscn" id="2_pqecb"]
+
+[node name="DestroyableTile" type="Node2D"]
+position = Vector2(9184, 1312)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_67nom")
+
+[node name="DestroyingWallParticles" parent="." instance=ExtResource("2_pqecb")]
+emission_rect_extents = Vector2(32, 32)
+scale_amount_max = 1.5
